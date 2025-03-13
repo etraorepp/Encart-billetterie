@@ -1,0 +1,267 @@
+<template id="cmpp-billetterie-template">
+	<div class="card">
+        <!-- Version Desktop -->
+		<div class="desktop-view">
+			<div class="card-header"><img class="card-image" alt="Img entete" />
+				<div class="badge-wrapper">
+					<div class="date-badge">
+						<p class="date"></p>
+						<p class="heure"></p>
+					</div>
+					<p class="info-badge">Bientôt en Concert</p>
+				</div>
+			</div>
+			<div class="content">
+				<p class="tag"></p>
+				<h2 class="title"></h2>
+				<p class="date"></p>
+				<p class="description"></p>
+				<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" loading="lazy" /></span> Infos &amp; Réservation </button>
+            </div>
+		</div>
+		<!-- Version Mobile -->
+		<div class="mobile-view">
+			<div class="badge-wrapper">
+				<div class="date-badge">
+					<p class="date"></p>
+					<p class="heure"></p>
+				</div>
+				<p class="info-badge">Bientôt en Concert</p>
+				<img src="/ui/skins/MEDIA/images/icon--chevron-droite.png" alt="" class="toggle-icon" loading="lazy" />
+            </div>
+			<div class="content-mobile">
+				<div class="img-container"><img class="card-image" alt="Img entete" /></div>
+				<div class="content">
+					<p class="tag"></p>
+					<h2 class="title"></h2>
+					<p class="date"></p>
+					<p class="description"></p>
+					<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" alt="logo ticket" loading="lazy" /></span> Infos &amp; Réservation </button>
+                </div>
+			</div>
+		</div>
+	</div>
+	<style>
+		/* Global Styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* Desktop */
+		.mobile-view {
+			display: none;
+		}
+
+		.card {
+			font-family: 'Source Sans Pro', 'Philarmonique', sans-serif;
+			width: 100%;
+			border-radius: 16px;
+			overflow: hidden;
+			color: #fff;
+			background: #001b3b;
+		}
+
+		/* Badge */
+		.badge-wrapper {
+			font-family: 'Source Sans Pro';
+			display: flex;
+			align-items: flex-end;
+			gap: 15px;
+		}
+
+		.desktop-view .badge-wrapper {
+			position: absolute;
+			z-index: 1;
+			bottom: 15px;
+			left: 15px;
+		}
+
+		.date-badge {
+			background: #238044;
+			color: #fff;
+			padding: 8px;
+			border-radius: 8px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 400;
+		}
+
+		.date-badge .date {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.info-badge {
+			font-family: 'Philharmonique';
+			font-size: 20px;
+			text-transform: uppercase;
+		}
+
+		/* Card Header */
+		.card-header {
+			position: relative;
+		}
+
+		.card-header::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(180deg, rgba(0, 27, 59, 0) 41%, rgba(0, 27, 59, 0.85) 100%);
+		}
+
+		.card-image {
+			width: 100%;
+			height: 225px;
+			object-fit: cover;
+		}
+
+		@media screen and (min-width: 1600px) {
+			.card-image {
+				height: 275px;
+			}
+		}
+
+		/* Content */
+		.content {
+			font-family: 'Source Sans Pro';
+			padding: 15px 20px;
+		}
+
+		.content .tag {
+			font-size: 14px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+		.content .title {
+			font-family: 'Philharmonique';
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.content .date {
+			color: #808080;
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+
+		.content .description {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+
+		.reservation-btn {
+			font-family: 'Source Sans Pro';
+			color: #fff;
+			font-size: 14px;
+			font-weight: 600;
+			border: none;
+			background: #BE244F;
+			padding: 8px 24px;
+			border-radius: 32px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 10px;
+		}
+
+		.reservation-btn .icon {
+			display: flex;
+			align-items: center;
+		}
+
+		.tag::after {
+			content: url(/ui/skins/MEDIA/images/pp-trait-separateur-blanc.png);
+			display: block;
+			line-height: .5;
+		}
+
+		.toggle-icon {
+			display: none;
+		}
+
+		/* Mobile */
+		@media screen and (max-width: 991px) {
+			.desktop-view {
+				display: none;
+			}
+
+			.mobile-view {
+				display: block;
+			}
+
+			.card {
+				padding: 15px 20px;
+			}
+
+			.mobile-view .badge-wrapper {
+				justify-content: space-between;
+				width: 100%;
+				align-items: center;
+				cursor: pointer;
+			}
+
+			.mobile-view .date-badge {
+				padding: 8px 10px; 
+			}
+			
+			.toggle-icon {
+				display: block;
+				transition: transform 0.3s ease-in-out;
+			}
+
+			.badge-wrapper.active .toggle-icon {
+				transform: rotate(90deg);
+			}
+
+			.content-mobile {
+				max-height: 0;
+				opacity: 0;
+				overflow: hidden;
+				transition: all 0.3s ease-in-out;
+				display: flex;
+			}
+
+			.content-mobile.active {
+				max-height: 100%;
+				opacity: 1;
+				margin-top: 20px;
+			}
+
+			.mobile-view .img-container img {
+				width: 100px;
+				height: 80px;
+				border-radius: 16px;
+				object-fit: cover;
+			}
+		}
+
+		/* Mobile Smaller */
+		@media screen and (max-width: 768px) {
+			.mobile-view .img-container img {
+				width: 80px;
+				height: 60px;
+			}
+
+			.mobile-view .tag, .mobile-view .date, .mobile-view .description, .mobile-view .reservation-btn, .mobile-view .date-badge {
+				font-size: 12px;
+			}
+
+			.mobile-view .title {
+				font-size: 16px;
+			}
+
+			.mobile-view .info-badge {
+				font-size: 18px;
+			}		
+		}
+	</style>
+</template>
