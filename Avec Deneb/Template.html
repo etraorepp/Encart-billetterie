@@ -238,18 +238,18 @@
 			}
 
 			.mobile-view .img-container img {
-				width: 100px;
-				height: 80px;
+				width: 170px;
+				height: 150px;
 				border-radius: 16px;
 				object-fit: cover;
 			}
 		}
 
-		/* Mobile Smaller */
+		/* Mobile S */
 		@media screen and (max-width: 768px) {
 			.mobile-view .img-container img {
-				width: 80px;
-				height: 60px;
+				width: 120px;
+				height: 100px;
 			}
 
 			.mobile-view .tag, .mobile-view .date, .mobile-view .description, .mobile-view .reservation-btn, .mobile-view .date-badge {
@@ -263,6 +263,17 @@
 			.mobile-view .info-badge {
 				font-size: 18px;
 			}		
+		}
+        
+		/* Mobile XS */
+        @media screen and (max-width: 480px) {
+			.mobile-view .img-container img {
+				width: 100px;
+				height: 80px;
+			}	
+            .content {
+                padding: 0px 15px;
+            }
 		}
 	</style>
 </template>
