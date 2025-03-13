@@ -55,7 +55,6 @@
 		}
 
 		.card {
-			font-family: 'Source Sans Pro', 'Philarmonique', sans-serif;
 			width: 100%;
 			border-radius: 16px;
 			overflow: hidden;
@@ -65,7 +64,7 @@
 
 		/* Badge */
 		.badge-wrapper {
-			font-family: 'Source Sans Pro';
+			font-family: var(--paragraph-font);
 			display: flex;
 			align-items: flex-end;
 			gap: 0.5em;
@@ -95,7 +94,7 @@
 		}
 
 		.info-badge {
-			font-family: 'Philharmonique';
+			font-family: var(--philharmonie-font-regular);
 			font-size: 20px;
 			text-transform: uppercase;
 		}
@@ -129,7 +128,7 @@
 
 		/* Content */
 		.content {
-			font-family: 'Source Sans Pro';
+			font-family: var(--paragraph-font);
 			padding: 15px 20px;
 		}
 
@@ -140,9 +139,9 @@
 		}
 
 		.content .title {
-			font-family: 'Philharmonique';
+			font-family: var(--philharmonie-font-regular);
 			font-size: 18px;
-			font-weight: 600;
+			font-weight: 500;
 			text-transform: uppercase;
 			margin-bottom: 10px;
 		}
@@ -159,7 +158,7 @@
 		}
 
 		.reservation-btn {
-			font-family: 'Source Sans Pro';
+			font-family: var(--paragraph-font);
 			color: #fff;
 			font-size: 14px;
 			font-weight: 600;
@@ -282,7 +281,7 @@
 <!-- Style à ajouter hors shadow dom -->
 <!--
 .renvoi-billetterie {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 @media screen and (min-width: 992px) {
 	.renvoi-billetterie {
