@@ -28,7 +28,7 @@ class CmppBilletterie extends HTMLElement {
 
             const attributes = {
                 imageUrl: eventData.image.uri,
-                date: new Date(eventData.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'}),
+                date: new Date(eventData.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'}).substring(0, 6),
                 heure: new Date(eventData.date).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'}).replace(':', 'h'),
                 tag: eventData.activity,
                 titre: eventData.title,
