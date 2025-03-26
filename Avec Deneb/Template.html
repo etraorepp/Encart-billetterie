@@ -1,6 +1,5 @@
 <template id="cmpp-billetterie-template">
-	<div class="card">
-        <!-- Version Desktop -->
+	<div class="card"><!-- Version Desktop -->
 		<div class="desktop-view">
 			<div class="card-header"><img class="card-image" alt="Img entete" />
 				<div class="badge-wrapper">
@@ -16,8 +15,7 @@
 				<h2 class="title"></h2>
 				<p class="date"></p>
 				<p class="description"></p>
-				<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" loading="lazy" /></span> Infos &amp; Réservation </button>
-            </div>
+				<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" loading="lazy" /></span> Infos &amp; Réservation </button></div>
 		</div>
 		<!-- Version Mobile -->
 		<div class="mobile-view">
@@ -27,8 +25,7 @@
 					<p class="heure"></p>
 				</div>
 				<p class="info-badge">Bientôt en Concert</p>
-				<img src="/ui/skins/MEDIA/images/icon--chevron-droite.png" alt="" class="toggle-icon" loading="lazy" />
-            </div>
+				<img src="/ui/skins/MEDIA/images/icon--chevron-droite.png" alt="" class="toggle-icon" loading="lazy" /></div>
 			<div class="content-mobile">
 				<div class="img-container"><img class="card-image" alt="Img entete" /></div>
 				<div class="content">
@@ -36,8 +33,7 @@
 					<h2 class="title"></h2>
 					<p class="date"></p>
 					<p class="description"></p>
-					<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" alt="logo ticket" loading="lazy" /></span> Infos &amp; Réservation </button>
-                </div>
+					<button class="reservation-btn"> <span class="icon"><img src="/ui/skins/MEDIA/images/picto-billets-blancs2.png" alt="logo ticket" loading="lazy" /></span> Infos &amp; Réservation </button></div>
 			</div>
 		</div>
 	</div>
@@ -80,7 +76,7 @@
 		.date-badge {
 			background: #238044;
 			color: #fff;
-			padding: 8px;
+			padding: 5px 10px;
 			border-radius: 8px;
 			text-align: center;
 			font-size: 14px;
@@ -208,10 +204,6 @@
 				cursor: pointer;
 			}
 
-			.mobile-view .date-badge {
-				padding: 8px 10px;
-			}
-
 			.toggle-icon {
 				display: block;
 				transition: transform 0.3s ease-in-out;
@@ -262,16 +254,16 @@
 				font-size: 18px;
 			}		
 		}
-        
+
 		/* Mobile XS */
-        @media screen and (max-width: 480px) {
+		@media screen and (max-width: 480px) {
 			.mobile-view .img-container img {
 				width: 80px;
 				height: 60px;
 			}	
-            .content {
-                padding: 0px 15px;
-            }
+			.content {
+				padding: 0px 15px;
+			}
 		}
 	</style>
 </template>
